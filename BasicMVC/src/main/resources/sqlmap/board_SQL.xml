@@ -38,10 +38,17 @@
 	where board_id = #{boardId}
 	]]>
 	</update>
-	
+
 	<delete id="delete" parameterType="hashMap">
 	<![CDATA[
 	delete from board where board_id = #{boardId}
 	]]>
 	</delete>
+
+	<select id="search_list" parameterType="hashMap" resultType="hashMap">
+	<![CDATA[
+	select * from board
+	where title like #{keyword}
+	]]>
+	</select>
 </mapper>

@@ -22,7 +22,7 @@
 				value="${data.author }" />
 		</p>
 		<p>내용</p>
-		<textarea cols="40" rows="10" name="content" readonly="readonly">${data.title }</textarea>
+		<textarea cols="40" rows="10" name="content" readonly="readonly">${data.content }</textarea>
 		<p>
 			<a href="/modify?boardId=${boardId }">수정</a>
 			<form method="post" action="/remove">

@@ -41,4 +41,9 @@ public class BoardServiceImpl implements BoardService{
 	public boolean remove(Map<String, Object> map) {
 		return this.boardDao.delete(map) == 1;
 	}
+	
+	@Override
+	public List<Map<String, Object>> search(Map<String, Object> map) {
+		return this.boardDao.search(map);
+	}
 }

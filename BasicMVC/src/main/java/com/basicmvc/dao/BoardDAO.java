@@ -31,6 +31,10 @@ public class BoardDAO {
 	public int delete(Map<String, Object> map) {
 		return this.sqlsessionTemplate.delete("board.delete", map);
 	}
+	
+	public List<Map<String, Object>> search(Map<String, Object> map) {
+		return this.sqlsessionTemplate.selectList("board.search_list", map);
+	}
 }
 
 

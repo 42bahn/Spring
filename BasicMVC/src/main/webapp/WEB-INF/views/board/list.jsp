@@ -9,9 +9,18 @@
 <title>게시글 목록</title>
 </head>
 <body>
+	<h1>Hello world!</h1>
+
+	<P>The time on the server is ${serverTime}.</P>
 	<a href="/">홈</a>
 	<br>
 	<a href="/create">게시글 작성</a>
+	<div>
+		<form method="POST" action="/search">
+			<input type="search" name="keyword" placeholder="검색"> <input
+				type="submit" value="검색">
+		</form>
+	</div>
 	<table border="1">
 		<thead>
 			<tr>

@@ -14,4 +14,6 @@ public interface BoardService {
 	boolean modify(Map<String, Object> map);
 
 	boolean remove(Map<String, Object> map);
+
+	List<Map<String, Object>> search(Map<String, Object> map);
 }
