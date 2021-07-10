@@ -16,16 +16,16 @@
 	<br>
 	<a href="/create">게시글 작성</a>
 	<div>
-		<form method="POST" action="/search">
-			<input type="search" name="keyword" placeholder="검색"> <input
-				type="submit" value="검색">
+		<form method="get" action="/search">
+			<input type="search" name="keyword" value="${keyword }"
+				placeholder="검색"> <input type="submit" value="검색">
 		</form>
 	</div>
 	<table border="1">
 		<thead>
 			<tr>
-				<td bgcolor="#D8D8D8">카테고리</td>
-				<td>제목</td>
+				<td bgcolor="#D8D8D8" align="center">카테고리</td>
+				<td width="500">제목</td>
 				<td bgcolor="#D8D8D8">작성자</td>
 				<td bgcolor="#D8D8D8">작성일자</td>
 			</tr>
@@ -34,7 +34,7 @@
 			<c:forEach var="row" items="${data }">
 				<tr>
 					<td bgcolor="#D8D8D8" align="center">${row.category }</td>
-					<td width="500"><a href="/detail?boardId=${row.board_id }">${row.title }</a></td>
+					<td><a href="/detail?boardId=${row.board_id }">${row.title }</a></td>
 					<td bgcolor="#D8D8D8">${row.author }</td>
 					<td bgcolor="#D8D8D8">${row.insert_date }</td>
 				</tr>

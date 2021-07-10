@@ -38,10 +38,21 @@
 	where board_id = #{boardId}
 	]]>
 	</update>
-	
+
 	<delete id="delete" parameterType="hashMap">
 	<![CDATA[
 	delete from board where board_id = #{boardId}
 	]]>
 	</delete>
+
+	<select id="search_list" parameterType="hashMap" resultType="hashMap">
+	<![CDATA[
+	select * from board
+	where 1 = 1
+	]]>
+	<if test="keyword != null and keyword != ''">
+	and (title like CONCAT('%', #{keyword}, '%') or author like CONCAT('%', #{keyword}, '%'))
+	</if>
+	order by insert_date desc
+	</select>
 </mapper>
